@@ -16,7 +16,6 @@ use Bluz\Auth\AbstractTable;
 use Bluz\Auth\AuthException;
 use Bluz\Proxy\Auth;
 use Bluz\Proxy\Config;
-use Bluz\Proxy\Response;
 
 /**
  * Auth Table
@@ -152,8 +151,8 @@ class Table extends AbstractTable
 
         $row->save();
 
-        Response::setCookie('rToken', $hash, time() + $ttl, '/');
-        Response::setCookie('rId', app()->user()->id, time() + $ttl, '/');
+        setcookie('rToken', $hash, time() + $ttl, '/');
+        setcookie('rId', app()->user()->id, time() + $ttl, '/');
     }
 
     /**
@@ -269,7 +268,7 @@ class Table extends AbstractTable
      */
     public function checkToken($token)
     {
-        if (!$authRow = $this->findRowWhere(['token' =>  $token, 'provider' => self::PROVIDER_TOKEN])) {
+        if (!$authRow = $this->findRowWhere(['token' => $token, 'provider' => self::PROVIDER_TOKEN])) {
             throw new AuthException('Invalid token');
         }
 
