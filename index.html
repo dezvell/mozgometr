@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Bluz Skeleton : Bluz skeleton application" />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-    <title>Bluz Skeleton</title>
+    <title>Bluz Skeleton by dezvell</title>
   </head>
 
   <body>
+    <header>
+      <div class="inner">
+        <h1>Bluz Skeleton</h1>
+        <h2>Bluz skeleton application</h2>
+        <a href="https://github.com/dezvell/mozgometr" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/bluzphp/skeleton">View on GitHub</a>
-
-          <h1 id="project_title">Bluz Skeleton</h1>
-          <h2 id="project_tagline">Bluz skeleton application</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/bluzphp/skeleton/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/bluzphp/skeleton/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>Bluz, a lightweight PHP Framework</h1>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="bluz-a-lightweight-php-framework" class="anchor" href="#bluz-a-lightweight-php-framework" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bluz, a lightweight PHP Framework</h1>
 
 <p>Easy to setup, easy to use.</p>
 
-<h2>Installation</h2>
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <p>Bluz works with PHP 5.4 or later and MySQL 5.1 or later</p>
 
@@ -64,56 +63,55 @@ Restore default database data from <code>dump.sql</code></p>
 
 <p>Edit your own configuration file <code>/path/to/application/configs/app.dev.php</code></p>
 
-<h2>Usage</h2>
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <p>Controller:</p>
 
-<div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="k">return</span>
-<span class="sd">/**</span>
-<span class="sd"> * @privilege View-User-Profile</span>
-<span class="sd"> * @cache 5 minutes</span>
-<span class="sd"> * @param integer $id</span>
-<span class="sd"> * @return \closure</span>
-<span class="sd"> */</span>
-<span class="k">function</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$view</span><span class="p">)</span> <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @var Application $this</span>
-<span class="sd">     * @var View $view</span>
-<span class="sd">     */</span>
-     <span class="nv">$view</span><span class="o">-&gt;</span><span class="na">user</span> <span class="o">=</span> <span class="nx">Users\Table</span><span class="o">::</span><span class="na">getInstance</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findRow</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
-<span class="p">};</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-k">return</span></span>
+<span class="pl-s2"><span class="pl-c">/**</span></span>
+<span class="pl-s2"><span class="pl-c"> * @privilege View-User-Profile</span></span>
+<span class="pl-s2"><span class="pl-c"> * @cache 5 minutes</span></span>
+<span class="pl-s2"><span class="pl-c"> * <span class="pl-k">@param</span> integer $id</span></span>
+<span class="pl-s2"><span class="pl-c"> * <span class="pl-k">@return</span> \closure</span></span>
+<span class="pl-s2"><span class="pl-c"> */</span></span>
+<span class="pl-s2"><span class="pl-st">function</span>(<span class="pl-vo">$id</span>) <span class="pl-k">use</span> (<span class="pl-vo">$view</span>) {</span>
+<span class="pl-s2">    <span class="pl-c">/**</span></span>
+<span class="pl-s2"><span class="pl-c">     * <span class="pl-k">@var</span> Application $this</span></span>
+<span class="pl-s2"><span class="pl-c">     * <span class="pl-k">@var</span> View $view</span></span>
+<span class="pl-s2"><span class="pl-c">     */</span></span>
+<span class="pl-s2">     <span class="pl-vo">$view</span><span class="pl-k">-&gt;</span><span class="pl-vo">user</span> <span class="pl-k">=</span> <span class="pl-s3">Users\</span><span class="pl-s3">Table</span><span class="pl-k">::</span>getInstance()<span class="pl-k">-&gt;</span>findRow(<span class="pl-vo">$id</span>);</span>
+<span class="pl-s2">};</span></pre></div>
 
 <p>View:</p>
 
-<div class="highlight"><pre><span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;&lt;?=</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">login</span><span class="cp">?&gt;</span><span class="x">&lt;/h2&gt;</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-k">&lt;</span><span class="pl-c1">h2</span><span class="pl-k">&gt;&lt;</span>?<span class="pl-k">=</span><span class="pl-vo">$user</span><span class="pl-k">-&gt;</span><span class="pl-vo">login</span></span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span>&lt;/<span class="pl-ent">h2</span>&gt;</pre></div>
 
 <p>Model:</p>
 
-<div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="k">namespace</span> <span class="nx">Application\Users</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">Table</span> <span class="k">extends</span> <span class="nx">\Bluz\Db\Table</span>
-<span class="p">{</span>
-    <span class="k">protected</span> <span class="nv">$table</span> <span class="o">=</span> <span class="s1">'users'</span><span class="p">;</span>
-    <span class="k">protected</span> <span class="nv">$primary</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">'id'</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-k">namespace</span> <span class="pl-en">Application\Users</span>;</span>
+<span class="pl-s2"><span class="pl-st">class</span> <span class="pl-en">Table</span> <span class="pl-s">extends</span> <span class="pl-s3">\Bluz\Db\</span><span class="pl-e">Table</span></span>
+<span class="pl-s2">{</span>
+<span class="pl-s2">    <span class="pl-s">protected</span> <span class="pl-vo">$table</span> <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">'</span>users<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s2">    <span class="pl-s">protected</span> <span class="pl-vo">$primary</span> <span class="pl-k">=</span> <span class="pl-s3">array</span>(<span class="pl-s1"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s2">}</span></pre></div>
 
-<div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="k">namespace</span> <span class="nx">Application\Users</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">Row</span> <span class="k">extends</span> <span class="nx">\Bluz\Db\Row</span> <span class="p">{</span>
-    <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
-    <span class="k">public</span> <span class="nv">$login</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-k">namespace</span> <span class="pl-en">Application\Users</span>;</span>
+<span class="pl-s2"><span class="pl-st">class</span> <span class="pl-en">Row</span> <span class="pl-s">extends</span> <span class="pl-s3">\Bluz\Db\</span><span class="pl-e">Row</span> {</span>
+<span class="pl-s2">    <span class="pl-s">public</span> <span class="pl-vo">$id</span>;</span>
+<span class="pl-s2">    <span class="pl-s">public</span> <span class="pl-vo">$login</span>;</span>
+<span class="pl-s2">}</span></pre></div>
 
-<h2>License</h2>
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>Read LICENSE file</p>
 
-<h2>Contributors</h2>
+<h2>
+<a id="contributors" class="anchor" href="#contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributors</h2>
 
 <ul>
 <li>
@@ -123,7 +121,10 @@ Restore default database data from <code>dump.sql</code></p>
 <li>
 <a href="https://github.com/MaksSlesarenko">Maks Slesarenko</a> </li>
 <li><a href="https://github.com/EagleMoor">EagleMoor</a></li>
-</ul><h2>Vendors</h2>
+</ul>
+
+<h2>
+<a id="vendors" class="anchor" href="#vendors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vendors</h2>
 
 <ul>
 <li>jQuery - <a href="https://github.com/jquery/jquery">https://github.com/jquery/jquery</a>
@@ -131,18 +132,25 @@ Restore default database data from <code>dump.sql</code></p>
 <li>Bootstrap - <a href="http://twitter.github.com/bootstrap/javascript.html">http://twitter.github.com/bootstrap/javascript.html</a>
 </li>
 </ul>
-      </section>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/dezvell/mozgometr/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/dezvell/mozgometr/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/dezvell/mozgometr"></a> is maintained by <a href="https://github.com/dezvell">dezvell</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Bluz Skeleton maintained by <a href="https://github.com/bluzphp">bluzphp</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
+  
   </body>
 </html>
